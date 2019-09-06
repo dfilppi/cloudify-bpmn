@@ -97,31 +97,31 @@ public class CloudifyInstallBlueprintDelegate extends AbstractJavaDelegate {
 		
 		StringBuilder sb = new StringBuilder();
 		if(!execution.hasVariable(INP_BLUEPRINT_KEY)) {
-			sb.append("required input not supplied: "+INP_BLUEPRINT_KEY);
+			sb.append("required input not supplied: "+INP_BLUEPRINT_KEY+"\n");
 		}
 		if(!execution.hasVariable(INP_CREDENTIALS_KEY)) {
-			sb.append("required input not supplied: "+INP_CREDENTIALS_KEY);
+			sb.append("required input not supplied: "+INP_CREDENTIALS_KEY+"\n");
 		}
 		else {
 			Map<String,String> creds = (Map<String,String>)execution.getVariable(INP_CREDENTIALS_KEY);
 			if(!creds.containsKey("url")) {
-				sb.append("required credentials entry not supplied: url");
+				sb.append("required credentials entry not supplied: url\n");
 			}
 			if(!creds.containsKey("username")) {
-				sb.append("required credentials entry not supplied: username");
+				sb.append("required credentials entry not supplied: username\n");
 			}
 			if(!creds.containsKey("password")) {
-				sb.append("required credentials entry not supplied: password");
+				sb.append("required credentials entry not supplied: password\n");
 			}
 			if(!creds.containsKey("tenant")) {
-				sb.append("required credentials entry not supplied: tenant");
+				sb.append("required credentials entry not supplied: tenant\n");
 			}
 		}
 		if(!execution.hasVariable(INP_CREDENTIALS_KEY)) {
-			sb.append("required input not supplied: "+INP_CREDENTIALS_KEY);
+			sb.append("required input not supplied: "+INP_CREDENTIALS_KEY+"\n");
 		}
 		if(!execution.hasVariable(INP_BLUEPRINT_NAME_KEY)) {
-			sb.append("required input not supplied: "+INP_BLUEPRINT_NAME_KEY);
+			sb.append("required input not supplied: "+INP_BLUEPRINT_NAME_KEY+"\n");
 		}
 		if(sb.length()>0) {
 			throw new Exception(sb.toString());
@@ -262,3 +262,4 @@ public class CloudifyInstallBlueprintDelegate extends AbstractJavaDelegate {
 		return path;
 	}
 }
+
